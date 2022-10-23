@@ -4,20 +4,20 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-// Console.WriteLine("Введите число 1");
-// int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число 1");
+int number1 = Convert.ToInt32(Console.ReadLine());
 
-// Console.WriteLine("Введите число 2");
-// int number2 = Convert.ToInt32(Console.ReadLine());
-// int max=number1;
-// if (number1>number2)
-// {
-//     Console.WriteLine("первое число максимальное");
-// }
-// else
-// {
-//     Console.WriteLine("второе число максимальное");
-// }
+Console.WriteLine("Введите число 2");
+int number2 = Convert.ToInt32(Console.ReadLine());
+int max=number1;
+if (number1>number2)
+{
+    Console.WriteLine("первое число максимальное");
+}
+else
+{
+    Console.WriteLine("второе число максимальное");
+}
 
 
 
@@ -26,28 +26,28 @@
 // 44 5 78 -> 78
 // 22 3 9 -> 22
 
-// Console.WriteLine("Введите число 1");
-//  int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число 1");
+ int number1 = Convert.ToInt32(Console.ReadLine());
 
-//  Console.WriteLine("Введите число 2");
-//  int number2 = Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите число 2");
+ int number2 = Convert.ToInt32(Console.ReadLine());
 
-//  Console.WriteLine("Введите число 3");
-//  int number3 = Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите число 3");
+ int number3 = Convert.ToInt32(Console.ReadLine());
 
-//  int max= number1;
-//  if (number2>max)
-//  {
-//     Console.WriteLine(max= number2);
-//  }
-//  else
-//  {
-//     Console.WriteLine(max= number1);
-//  }
-//  if (number3>max)
-//  {
-//     Console.WriteLine(max= number3);
-//  }
+ int max= number1;
+ if (number2>max)
+ {
+    Console.WriteLine(max= number2);
+ }
+ else
+ {
+    Console.WriteLine(max= number1);
+ }
+ if (number3>max)
+ {
+    Console.WriteLine(max= number3);
+ }
  
 
 
@@ -57,17 +57,17 @@
 // -3 -> нет
 // 7 -> нет
 
-// Console.WriteLine("Введите число");
-//  int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число");
+ int number = Convert.ToInt32(Console.ReadLine());
 
-//  if (number%2==0)
-//  {
-//     Console.WriteLine("число четное");
-//  }
-//  else
-//  {
-//     Console.WriteLine("число нечетное");
-//  }
+ if (number%2==0)
+ {
+    Console.WriteLine("число четное");
+ }
+ else
+ {
+    Console.WriteLine("число нечетное");
+ }
 
 // Задача 8: Напишите программу, которая на вход принимает число (N), 
 // а на выходе показывает все чётные числа от 1 до N.
