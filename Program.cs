@@ -1,65 +1,48 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
-//  Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
+﻿//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+//0, 7, 8, -2, -2 -> 2
+//1, -7, 567, 89, 223-> 3
 
-int [] array = new int [4];
-int count=0;
-    for(int i = 0; i<array.Length; i++)
-    { 
-        array[i]=new Random().Next(100,1000);
-        Console.Write(array[i]+",");
-        array[i]%=2;
-    if (array[i]==0)
-    {
-      count++;
-    }
-        }
-        
-        Console.WriteLine("Сумма четных чисел= "+ count);
-       
-
-// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-// [3, 7, 23, 12] -> 19
-// [-4, -6, 89, 6] -> 0
-
-int [] array = new int [5];
-int sum=0;
-    for(int i = 0; i<array.Length; i++)
-    { 
-        array[i]=new Random().Next(0,100);
-        Console.Write(array[i]+", ");
-        if (i%2 != 0)
-        {
-           sum=sum+array[i];
-
-        }
-    }
-        
-        Console.WriteLine("Сумма элементов, стоящих на нечётных позициях= "+ sum);
-
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// [3 7 22 2 78] -> 76
-
-int [] array = new int [5];
-
- for(int i = 0; i<array.Length; i++)
- { 
-     array[i]=new Random().Next(-9,150);
-      Console.Write(array[i]+",");
- }
- int max= array[0];
- int min= array[0];
- for (int i = 0; i < array.Length; i++)
+Console.WriteLine("Введите числа с клавиатуры");
+ int M =Convert.ToInt32(Console.ReadLine());
+ int[]array=new int[M];
+ int count=0;
+ for (int i = 0; i < M; i++)
  {
-    if (array[i]>max)
+    array[i]= Convert.ToInt32(Console.ReadLine());
+    if(array[i]>0)
     {
-       max= array[i];
-
-    }
-    if (array[i]<min)
-    {
-       min= array[i];
-       
+        count++;
     }
  }
-Console.WriteLine($"разница между max&min равна {max-min}");
+
+Console.WriteLine(count);
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
+// значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+Console.WriteLine("y=k*x+b");
+Console.WriteLine("Введите k1");
+int k1=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите b1");
+int b1=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите k2");
+int k2=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите b2");
+int b2=Convert.ToInt32(Console.ReadLine());
+
+if (k1==k2)
+{
+   Console.WriteLine("Прямые параллельны"); 
+}
+else
+{
+    int x=(b2-b1)/(k1-k2);
+    int y=k1*x+b1;
+   Console.WriteLine($"Точка пересечения равна = ({x};{y})"); 
+}
+
+
