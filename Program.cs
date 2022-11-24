@@ -1,48 +1,101 @@
-﻿//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-//0, 7, 8, -2, -2 -> 2
-//1, -7, 567, 89, 223-> 3
+﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
 
-Console.WriteLine("Введите числа с клавиатуры");
- int M =Convert.ToInt32(Console.ReadLine());
- int[]array=new int[M];
- int count=0;
- for (int i = 0; i < M; i++)
- {
-    array[i]= Convert.ToInt32(Console.ReadLine());
-    if(array[i]>0)
+
+ Console.WriteLine("Введите количество строк: ");
+int row=Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите количество столбцов: ");
+int columns=Convert.ToInt32(Console.ReadLine());
+
+ double [,] matrix= new double [row,columns];
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        count++;
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(-2,25)+new Random().NextDouble(); 
+            matrix[i, j] = Math.Round(matrix[i,j],1);
+            Console.Write(matrix[i,j]+"  ");
+        }
+            Console.WriteLine();
     }
- }
+        
+    
 
-Console.WriteLine(count);
 
-// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
-// значения b1, k1, b2 и k2 задаются пользователем.
-// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-Console.WriteLine("y=k*x+b");
-Console.WriteLine("Введите k1");
-int k1=Convert.ToInt32(Console.ReadLine());
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
 
-Console.WriteLine("Введите b1");
-int b1=Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите количество строк: ");
+int row=Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите k2");
-int k2=Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите количество столбцов: ");
+int columns=Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите b2");
-int b2=Convert.ToInt32(Console.ReadLine());
 
-if (k1==k2)
+int [,] matrix= new int [row,columns];
+for (int i = 0; i < row; i++)
 {
-   Console.WriteLine("Прямые параллельны"); 
+    for (int j = 0; j < columns; j++)
+    {
+        matrix[i,j]=i+j;
+        Console.Write(matrix[i,j]+"  ");
+    }
+    Console.WriteLine(); 
 }
-else
+Console.WriteLine("Введите номер строки: ");
+int x=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите номер столбца: ");
+int y=Convert.ToInt32(Console.ReadLine());
+if (x>row || y>columns)
+    {
+      Console.WriteLine("   такого числа в массиве нет");
+    }
+    else
+    {
+      Console.WriteLine("_____________");
+      Console.WriteLine(matrix[x,y]);
+    }
+
+
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+int [,] matrix= new int[3,4];
+ for (int i = 0; i < 3; i++)
 {
-    int x=(b2-b1)/(k1-k2);
-    int y=k1*x+b1;
-   Console.WriteLine($"Точка пересечения равна = ({x};{y})"); 
+    for (int j = 0; j < 4; j++)
+    {
+        matrix[i,j]=i+j;
+      Console.Write(matrix[i,j]+"  ");
+    }
+     Console.WriteLine();
 }
+ 
+ for (int j = 0; j < 4; j++)
+{
+    int sum =0;
+    for (int i = 0; i < 3; i++)
+    {
+      sum+= matrix[i,j];
+    }
+    Console.WriteLine($"Среднее арифметическое столбцов= {sum/3}");
+}
+
 
 
